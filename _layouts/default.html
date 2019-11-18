@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+	{% include headwLocal.html %}
+	<body id="body">
+		<div id="container">
+		{% include banner.html %}
+		{% include navigation.html %}
+		<script>
+			clean(document.getElementById('navigation'));
+		</script>
+		<div id="contentContainer">
+			{{ content }}
+		</div>
+		{% include footer.html %}
+		</div>
+		<script>
+			checkScrollBars();
+		</script>
+	</body>
+</html>

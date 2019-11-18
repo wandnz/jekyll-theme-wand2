@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div id="topic">
+	<h2>{{ page.name }}</h2>
+	{{ content }}
+	<table>
+		<tr id="tableHead">
+			<td>Name</td>
+			<td>Description</td>
+		</tr>
+		<tr id="thSpacer"><td></td><td></td></tr>
+		{% for internalProject in site.projects %}
+			{% if page.name == internalProject.topic %}
+			<tr>
+				<td><a href="{{ internalProject.url | absolute_url }}">
+					{{ internalProject.name }}</a></td>
+				<td>{{ internalProject.description | markdownify }}</td>
+			</tr>
+			{% endif %}
+		{% endfor %}
+
+		{% for externalProject in site.data.externalProject %}
+			{% if page.name == externalProject.topic %}
+			<tr>
+				<td><a href="{{ externalProject.link }}">{{ externalProject.name }}</a></td>
+				<td>{{ externalProject.description | markdownify }}</td>
+			</tr>
+			{% endif %}
+		{% endfor %}
+	</table>
+</div>
