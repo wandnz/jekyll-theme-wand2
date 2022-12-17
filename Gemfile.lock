@@ -70,9 +70,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 2.0.2)
+  bundler (>= 2.2.33)
   jekyll-theme-wand2!
   rake (~> 13.0)
 
 BUNDLED WITH
-   2.0.2
+   2.2.33
