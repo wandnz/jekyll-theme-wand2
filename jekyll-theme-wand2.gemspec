@@ -16,6 +16,6 @@ end
 
   spec.add_runtime_dependency "jekyll"
 
-  spec.add_development_dependency "bundler", "~> 2.0.2"
+  spec.add_development_dependency "bundler", ">= 2.2.33"
   spec.add_development_dependency "rake", "~> 13.0"
 end
