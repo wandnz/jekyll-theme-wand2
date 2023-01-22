@@ -73,16 +73,9 @@
 	}
 
 	.dropdown:hover .dropdown-content {display: none;}
-	
+
 	#c-content {
 		@extend %main-mob;
-
-		#twitter-content {
-			min-width: 0;
-			margin-right: 0;
-			margin-left: 0;
-			max-width: none;
-		}
 	}
 
 	#people {
