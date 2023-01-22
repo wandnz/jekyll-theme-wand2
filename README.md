@@ -54,7 +54,7 @@ end
 And in your sites `_config.yml` provide the following values, and comment out the line `theme: jekyll-theme-wand2` if present.
 
 ```yml
-title: WAND
+title: WAND Group
 email: 
 description: >- # this means to ignore newlines until "baseurl:"
  Write an awesome description for your new site here. You can edit this
@@ -62,6 +62,7 @@ description: >- # this means to ignore newlines until "baseurl:"
  Google search results) and in your feed.xml site description.
 baseurl: "/wand.nz" # the subpath of your site, e.g. /blog
 url: "https://wanduow.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+copyright: WAND Group
 twitter_username: jekyllrb
 github_username:  Jorsin
 remote_theme: wanduow/jekyll-theme-wand2

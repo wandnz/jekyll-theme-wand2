@@ -3,7 +3,7 @@
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-theme-wand2"
   spec.version       = "0.1.0"
-  spec.authors       = ["WAND"]
+  spec.authors       = ["WAND Group"]
   spec.email         = ["contact@wand.net.nz"]
 
   spec.summary       = "Theme used for the WAND website"
