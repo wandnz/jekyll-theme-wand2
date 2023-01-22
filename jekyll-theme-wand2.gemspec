@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["WAND"]
   spec.email         = ["contact@wand.net.nz"]
 
-  spec.summary       = "Theme used for the wand website"
+  spec.summary       = "Theme used for the WAND website"
   spec.homepage      = "https://wand.nz"
   spec.license       = "MIT"
 
