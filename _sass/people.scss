@@ -50,11 +50,8 @@
       }
     }
   }
-  .oddpCategory {
-    background-color: $backGrey;
-  }
 
-  .pCategory {
+  .peopleCategory {
     display: inline-block;
     text-align: left;
     width: 110%;
@@ -70,10 +67,14 @@
       margin-top: 1%;
       margin-right: 25%;
     }
+
+    &:nth-of-type(even) {
+      background-color: $backGrey;
+    }
   }
 }
 
-.peopleImg {
+.personImage {
   background-color: #a0a0a0;
   height: 200px;
   width: 200px;
@@ -101,7 +102,7 @@
     color: $headerRed;
   }
 
-  .peopleImg {
+  .personImage {
     float: right;
     height: 300px;
     width: 300px;

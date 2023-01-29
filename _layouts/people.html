@@ -5,15 +5,15 @@ layout: default
 <div id="peopleInput">{{ content }}</div>
 
 <div id="people">
-  {% for item in site.data.pCategory %}
-  {% assign indexOdd = forloop.index0 | modulo: 2 %}
-  <div class="pCategory {% if indexOdd == 1 %}oddpCategory{% endif %}">
+  {% for item in site.data.people_categories %}
+  <div class="peopleCategory">
     <h1>{{ item.name }}</h1>
     <ul>
-      {% for person in site.people %}
-        {% if person.role == item.name %}
+    {% for person in site.people %}
+      {% if person.role == item.name %}
       <li class="person">
-        <a href="{% if person.link != null %}{{ person.link }}{% else %}{{ person.url | absolute_url }}{% endif %}">
+        <a href="{% if person.link %}{{ person.link }}
+                 {%- else %}{{ person.url | absolute_url }}{% endif %}">
           <img
             src="{% for imgRef in site.static_files %}
                    {% if imgRef.path contains 'assets/images/' %}
@@ -25,13 +25,13 @@ layout: default
                      {% endif %}
                    {% endif %}
                  {% endfor %}"
-            class="peopleImg"
+            class="personImage"
             alt="Photo of {{ person.name }}" />
           <h4>{{ person.name }}</h4>
         </a>
       </li>
-        {% endif %}
-      {% endfor %}
+      {% endif %}
+    {% endfor %}
     </ul>
   </div>
   <br />
