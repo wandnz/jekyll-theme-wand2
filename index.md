@@ -3,8 +3,6 @@ layout: plain
 title: Documentation
 ---
 
-WAND theme
-==========
-- - -
+# WAND theme
 
 This is the theme used for the WAND site

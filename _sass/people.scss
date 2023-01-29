@@ -1,111 +1,111 @@
 #people {
-	@extend %main-div;
+  @extend %main-div;
 
-	&Input {
-		@extend %main-div;
-		display: inline-block;
-		text-align: left;
-	}
+  &Input {
+    @extend %main-div;
+    display: inline-block;
+    text-align: left;
+  }
 
-	ul {
-		padding-left: 0px;
+  ul {
+    padding-left: 0px;
 
-		a {
-			display: inline-block;
-			text-decoration: none;
-			color: black;
-			height: 300px;
-			width: 200px;
-			margin-right: 70px;
-			outline: none;
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: black;
+      height: 300px;
+      width: 200px;
+      margin-right: 70px;
+      outline: none;
 
-			h4 {
-				transition: color 0.3s;
-			}
+      h4 {
+        transition: color 0.3s;
+      }
 
-			&:hover {
-				> h4 {
-					color: $btnRed;
-				}
-			}
+      &:hover {
+        > h4 {
+          color: $btnRed;
+        }
+      }
 
-			&:active {
-				outline: none;
-			}
-		}
+      &:active {
+        outline: none;
+      }
+    }
 
-		li {
-			text-align: left;
-			display: inline-block;
-			vertical-align: top;
+    li {
+      text-align: left;
+      display: inline-block;
+      vertical-align: top;
 
-			h4 {
-				margin: 0px;
-				padding: 0px;
-				padding-top: 15px;
-			}
+      h4 {
+        margin: 0px;
+        padding: 0px;
+        padding-top: 15px;
+      }
 
-			p {
-				margin: 0px;
-			}
-		}
-	}
-	.oddpCategory {
-		background-color: $backGrey;
-	}
+      p {
+        margin: 0px;
+      }
+    }
+  }
+  .oddpCategory {
+    background-color: $backGrey;
+  }
 
-	.pCategory {
-		display: inline-block;
-		text-align: left;
-		width: 110%;
-		margin-left: -22%;
-		padding-left: 42%;
-		padding-top: 1em;
+  .pCategory {
+    display: inline-block;
+    text-align: left;
+    width: 110%;
+    margin-left: -22%;
+    padding-left: 42%;
+    padding-top: 1em;
 
-		ul {
-			width: 70%;
-		}
+    ul {
+      width: 70%;
+    }
 
-		h1 {
-			margin-top: 1%;
-			margin-right: 25%;
-		}
-	}
+    h1 {
+      margin-top: 1%;
+      margin-right: 25%;
+    }
+  }
 }
 
 .peopleImg {
-	background-color: #a0a0a0;
-	height: 200px;
-	width: 200px;
-	display: block;
-	object-fit: cover;
-	object-position: top;
+  background-color: #a0a0a0;
+  height: 200px;
+  width: 200px;
+  display: block;
+  object-fit: cover;
+  object-position: top;
 }
 
 #person {
-	width: 50%;
-	margin-left: -30%;
-	min-width: 300px;
-	display: inline-block;
-	text-align: initial;
+  width: 50%;
+  margin-left: -30%;
+  min-width: 300px;
+  display: inline-block;
+  text-align: initial;
 
-	h5 {
-		margin-top: 0;
-	}
+  h5 {
+    margin-top: 0;
+  }
 
-	h2 {
-		margin-bottom: 0.2em;
-	}
+  h2 {
+    margin-bottom: 0.2em;
+  }
 
-	h4 {
-		color: $headerRed;
-	}
+  h4 {
+    color: $headerRed;
+  }
 
-	.peopleImg {
-		float: right;
-		height: 300px;
-		width: 300px;
-		margin-right: -60%;
-		margin-left: 5%;
-	}
+  .peopleImg {
+    float: right;
+    height: 300px;
+    width: 300px;
+    margin-right: -60%;
+    margin-left: 5%;
+  }
 }

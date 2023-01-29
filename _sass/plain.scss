@@ -1,35 +1,35 @@
 #plain {
-	@extend %main-div;
-	display: inline-block;
-	text-align: left;
+  @extend %main-div;
+  display: inline-block;
+  text-align: left;
 
-	& h4 {
-		color: $headerRed;
-	}
+  & h4 {
+    color: $headerRed;
+  }
 
-	& strong {
-		font-size: 1.1em;
-		font-weight: 600;
-	}
+  & strong {
+    font-size: 1.1em;
+    font-weight: 600;
+  }
 }
 
 #section {
-	text-align: left;
+  text-align: left;
 
-	.sectDiv {
-		width: 60%;
-		margin-left: -20.5%;
-		padding-left: 42.5%;
-		padding-right: 40%;
-		padding-top: 4em;
-		padding-bottom: 4em;
-	}
+  .sectDiv {
+    width: 60%;
+    margin-left: -20.5%;
+    padding-left: 42.5%;
+    padding-right: 40%;
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
 
-	.oddSect {
-		background-color: $backGrey;
-	}
+  .oddSect {
+    background-color: $backGrey;
+  }
 
-	.firstSect {
-		padding-top: 0;
-	}
+  .firstSect {
+    padding-top: 0;
+  }
 }

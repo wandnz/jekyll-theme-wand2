@@ -1,18 +1,16 @@
 ---
 layout: default
 ---
-<div id="researchInput">
-	{{ content }}
-</div>
+
+<div id="researchInput">{{ content }}</div>
 
 <div id="research">
-	<ul>
-		{% for topic in site.research %}
-		{% assign indexOdd = forloop.index0 | modulo: 2 %}
-		<li {% if indexOdd == 1 %} class="oddResearch"{% endif %}>
-			{{ topic.content }}
-			<a href="{{ topic.url | absolute_url }}" class="boxLink">{{ topic.name }}</a>
-		</li>
-		{% endfor %}
-	</ul>
+  <ul>
+    {% for topic in site.research %} {% assign indexOdd = forloop.index0 | modulo: 2 %}
+    <li {% if indexOdd == 1 %} class="oddResearch"{% endif %}>
+      {{ topic.content }}
+      <a href="{{ topic.url | absolute_url }}" class="boxLink">{{ topic.name }}</a>
+    </li>
+    {% endfor %}
+  </ul>
 </div>

@@ -3,53 +3,63 @@ layout: default
 ---
 
 <div id="person">
-	<h2>{{ page.name }}</h2>
-	<h5>{{ page.role }}</h5>
-	<img src="
-	{%- for imgRef in site.static_files -%}
-		{%- if imgRef.path contains 'assets/images/' -%}
-			{%- assign imgRefArray = imgRef.path | split: 'ssets/images/' -%}
-			{%- assign personRef = page.name | downcase | replace: ' ', '_' -%}
-			{%- if imgRefArray[1] contains personRef -%}
-			{{ imgRefArray[1] | prepend: 'assets/images/' | absolute_url}}
-			{%- break -%}
-			{%- endif -%}
-		{%- endif -%}
-	{%- endfor -%}
-	" class="peopleImg" alt=" ">
-	{{ content }}
+  <h2>{{ page.name }}</h2>
+  <h5>{{ page.role }}</h5>
+  <img
+    src="{% for imgRef in site.static_files %}
+           {% if imgRef.path contains 'assets/images/' %}
+             {% assign imgRefArray = imgRef.path | split: 'ssets/images/' %}
+             {% assign personRef = page.name | downcase | replace: ' ', '_' %}
+             {% if imgRefArray[1] contains personRef %}
+               {{ imgRefArray[1] | prepend: 'assets/images/' | absolute_url}}
+               {% break %}
+             {% endif %}
+           {% endif %}
+	{% endfor %}"
+    class="peopleImg"
+    alt="Photo of {{ page.name }}"
+  />
+  {{ content }}
 </div>
 
 {% if page.projects != null %}
-{% assign projectsArray = page.projects | split: ',' %}
+  {% assign projectsArray = page.projects | split:',' %}
 <div id="topic">
-	<h3>Projects</h3>
-	<table>
-		<tr id="tableHead">
-			<td>Name</td>
-			<td>Description</td>
-		</tr>
-		<tr id="thSpacer"><td></td><td></td></tr>
-		{% for project in projectsArray %}
-		{% assign projectCompare = project | strip %}
-		{% for externalProject in site.data.externalProject %}
-			{% if projectCompare == externalProject.name %}
-			<tr>
-				<td><a href="{{ externalProject.link }}">{{ externalProject.name }}</a></td>
-				<td>{{ externalProject.description }}</td>
-			</tr>
-			{% endif %}
-		{% endfor %}
-
-		{% for internalProject in site.projects %}
-			{% if projectCompare == internalProject.name %}
-			<tr>
-				<td><a href="{{ internalProject.url | absolute_url }}">{{ internalProject.name }}</a></td>
-				<td>{{ internalProject.description }}</td>
-			</tr>
-			{% endif %}
-		{% endfor %}
-		{% endfor %}
-	</table>
+  <h3>Projects</h3>
+  <table>
+    <tr id="tableHead">
+      <td>Name</td>
+      <td>Description</td>
+    </tr>
+    <tr id="thSpacer">
+      <td></td>
+      <td></td>
+    </tr>
+    {% for project in projectsArray %}
+      {% assign projectCompare = project | strip %}
+      {% for externalProject in site.data.externalProject %}
+        {% if projectCompare == externalProject.name %}
+    <tr>
+      <td>
+        <a href="{{ externalProject.link }}">{{ externalProject.name }}</a>
+      </td>
+      <td>{{ externalProject.description }}</td>
+    </tr>
+        {% endif %}
+      {% endfor %}
+      {% for internalProject in site.projects %}
+        {% if projectCompare == internalProject.name %}
+    <tr>
+      <td>
+        <a href="{{ internalProject.url | absolute_url }}"
+          >{{ internalProject.name }}</a
+        >
+      </td>
+      <td>{{ internalProject.description }}</td>
+    </tr>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </table>
 </div>
 {% endif %}
