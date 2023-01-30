@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1" />
     <title>
-      {% if page.layout == "person" -%}
+      {%- if page.layout == "person" -%}
       {{ page.name }}
       {%- else -%}
       {{ page.title }}
-      {%- endif %}
+      {%- endif -%}
     </title>
     <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | absolute_url }}" />
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | absolute_url }}" />
