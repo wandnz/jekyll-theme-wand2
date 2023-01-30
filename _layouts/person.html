@@ -23,24 +23,19 @@ layout: default
       <td>Name</td>
       <td>Description</td>
     </tr>
-    <tr id="thSpacer">
-      <td></td>
-      <td></td>
-    </tr>
     {% for project in projectsArray %}
-      {% assign projectCompare = project | strip %}
-      {% for externalProject in site.data.externalProject %}
-        {% if projectCompare == externalProject.name %}
+      {% assign project = project | strip %}
+      {% assign internalProjects = site.projects | where: "name", project %}
+      {% assign externalProjects = site.data.externalProject | where: "name", project %}
+      {% for externalProject in externalProjects %}
     <tr>
       <td>
         <a href="{{ externalProject.link }}">{{ externalProject.name }}</a>
       </td>
       <td>{{ externalProject.description }}</td>
     </tr>
-        {% endif %}
       {% endfor %}
-      {% for internalProject in site.projects %}
-        {% if projectCompare == internalProject.name %}
+      {% for internalProject in internalProjects %}
     <tr>
       <td>
         <a href="{{ internalProject.url | absolute_url }}"
@@ -49,7 +44,6 @@ layout: default
       </td>
       <td>{{ internalProject.description }}</td>
     </tr>
-        {% endif %}
       {% endfor %}
     {% endfor %}
   </table>
