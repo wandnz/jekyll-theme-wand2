@@ -10,23 +10,23 @@
       {{ page.title }}
       {%- endif -%}
     </title>
-    <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | absolute_url }}" />
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | absolute_url }}" />
-    <script type="text/javascript" src="{{ '/assets/js/theme.js' | absolute_url }}"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+    <script type="text/javascript" src="{{ '/assets/js/theme.js' | relative_url }}"></script>
   </head>
   <body id="body">
     <div id="container">
       <div id="banner">
-        <a href="{{ '/' | absolute_url }}">
-          <img src="{{ 'assets/images/thin-logo-small.svg' | absolute_url }}" alt="WAND logo" />
+        <a href="{{ '/' | relative_url }}">
+          <img src="{{ 'assets/images/thin-logo-small.svg' | relative_url }}" alt="WAND logo" />
         </a>
         <button onclick="toggleMenu();" id="menu-button">
-          <img src="{{ 'assets/images/hamburger-menu.svg' | absolute_url }}" alt="Menu" />
+          <img src="{{ 'assets/images/hamburger-menu.svg' | relative_url }}" alt="Menu" />
         </button>
       </div>
       <nav id="navigation">
-        <a id="navImg" href="{{ '/' | absolute_url }}">
-          <img src="{{ 'assets/images/thin-logo-small.svg' | absolute_url }}" alt="WAND logo" />
+        <a id="navImg" href="{{ '/' | relative_url }}">
+          <img src="{{ 'assets/images/thin-logo-small.svg' | relative_url }}" alt="WAND logo" />
         </a>
         {% assign linkCompare = page.url | remove: '/' %}
         {% if page.url == '/' %}
@@ -35,18 +35,18 @@
         {% for item in site.data.navigation %}
           {% if item.drop != null %}
         <div class="dropdown">
-          <a href="{{ item.link | absolute_url }}" class="navlink droplink{% if linkCompare == item.link %} current{% endif %}">
+          <a href="{{ item.link | relative_url }}" class="navlink droplink{% if linkCompare == item.link %} current{% endif %}">
             <h6>{{ item.name }}</h6>
           </a>
           <div class="dropdown-content">
             {% assign nameCompare = item.name | downcase %}
             {% for topic in site[nameCompare] %}
-            <a href="{{ topic.url | absolute_url }}">{{ topic.name }}</a>
+            <a href="{{ topic.url | relative_url }}">{{ topic.name }}</a>
             {% endfor %}
           </div>
         </div>
           {% else %}
-        <a href="{{ item.link | absolute_url }}" class="navlink {% if linkCompare == item.link %}current{% endif %}">
+        <a href="{{ item.link | relative_url }}" class="navlink {% if linkCompare == item.link %}current{% endif %}">
           <h6>{{ item.name }}</h6>
         </a>
           {% endif %}

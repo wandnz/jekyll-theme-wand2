@@ -18,7 +18,7 @@ layout: default
       {% if page.name == internalProject.topic %}
     <tr>
       <td>
-        <a href="{{ internalProject.url | absolute_url }}">{{ internalProject.name }}</a>
+        <a href="{{ internalProject.url | relative_url }}">{{ internalProject.name }}</a>
       </td>
       <td>{{ internalProject.description | markdownify }}</td>
     </tr>
