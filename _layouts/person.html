@@ -14,9 +14,8 @@ layout: default
     alt="Photo of {{ person.name }}" />
   {{ content }}
 </div>
-
-{% if page.projects != null %}
-  {% assign projectsArray = page.projects | split:',' %}
+{% if page.projects -%}
+  {%- assign projectsArray = page.projects | split:',' -%}
 <div id="topic">
   <h3>Projects</h3>
   <table>
