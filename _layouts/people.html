@@ -13,18 +13,12 @@ layout: default
       {% if person.role == item.name %}
       <li class="person">
         <a href="{% if person.link %}{{ person.link }}
-                 {%- else %}{{ person.url | absolute_url }}{% endif %}">
-          <img
-            src="{% for imgRef in site.static_files %}
-                   {% if imgRef.path contains 'assets/images/' %}
-                     {% assign imgRefArray = imgRef.path | split: 'ssets/images/' %}
-                     {% assign personRef = person.name | downcase | replace: ' ', '_' %}
-                     {% if imgRefArray[1] contains personRef %}
-                 {{ imgRefArray[1] | prepend: 'assets/images/' | absolute_url }}
-                       {% break %}
-                     {% endif %}
-                   {% endif %}
-                 {% endfor %}"
+                 {%- else %}{{ person.url | relative_url }}{% endif %}">
+          <img src="{% if person.photo -%}
+                    {{- person.photo | prepend: 'assets/images/people/' | relative_url -}}
+                    {%- else -%}
+                    {{- 'assets/images/people/anonymous.png' | relative_url -}}
+                    {%- endif %}"
             class="personImage"
             alt="Photo of {{ person.name }}" />
           <h4>{{ person.name }}</h4>
