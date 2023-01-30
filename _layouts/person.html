@@ -5,20 +5,13 @@ layout: default
 <div id="person">
   <h2>{{ page.name }}</h2>
   <h5>{{ page.role }}</h5>
-  <img
-    src="{% for imgRef in site.static_files %}
-           {% if imgRef.path contains 'assets/images/' %}
-             {% assign imgRefArray = imgRef.path | split: 'ssets/images/' %}
-             {% assign personRef = page.name | downcase | replace: ' ', '_' %}
-             {% if imgRefArray[1] contains personRef %}
-               {{ imgRefArray[1] | prepend: 'assets/images/' | absolute_url}}
-               {% break %}
-             {% endif %}
-           {% endif %}
-	{% endfor %}"
+  <img src="{% if person.photo -%}
+            {{- person.photo | prepend: 'assets/images/people/' | relative_url -}}
+            {%- else -%}
+            {{- 'assets/images/people/anonymous.png' | relative_url -}}
+            {%- endif %}"
     class="personImage"
-    alt="Photo of {{ page.name }}"
-  />
+    alt="Photo of {{ person.name }}" />
   {{ content }}
 </div>
 
