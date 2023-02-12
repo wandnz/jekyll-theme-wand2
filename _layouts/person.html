@@ -23,29 +23,27 @@ layout: default
       <td>Name</td>
       <td>Description</td>
     </tr>
-    {% for project in projectsArray %}
-      {% assign project = project | strip %}
-      {% assign internalProjects = site.projects | where: "name", project %}
-      {% assign externalProjects = site.data.external_projects | where: "name", project %}
-      {% for externalProject in externalProjects %}
+    {% for project in projectsArray -%}
+      {%- assign project = project | strip -%}
+      {%- assign internalProjects = site.projects | where: "name", project -%}
+      {%- assign externalProjects = site.data.external_projects | where: "name", project -%}
+      {%- for externalProject in externalProjects -%}
     <tr>
       <td>
         <a href="{{ externalProject.url }}">{{ externalProject.name }}</a>
       </td>
       <td>{{ externalProject.description }}</td>
     </tr>
-      {% endfor %}
-      {% for internalProject in internalProjects %}
+      {%- endfor -%}
+      {%- for internalProject in internalProjects -%}
     <tr>
       <td>
-        <a href="{{ internalProject.url | absolute_url }}"
-          >{{ internalProject.name }}</a
-        >
+        <a href="{{ internalProject.url | absolute_url }}">{{ internalProject.name }}</a>
       </td>
       <td>{{ internalProject.description }}</td>
     </tr>
-      {% endfor %}
-    {% endfor %}
+      {%- endfor -%}
+    {%- endfor -%}
   </table>
 </div>
-{% endif %}
+{%- endif %}
