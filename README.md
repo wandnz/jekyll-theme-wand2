@@ -101,19 +101,6 @@ collections:
 
 Create the directory for your new collection inside your collections folder with an underscore at the front of its name. eg `collection/_example-collection`
 
-### Adding a collection dropdown to the nav menu
-
-Make sure your collection's name(in `_config.yml`) is the same as your nav item's name(in `_data/navigation.yml`). Then simply add a drop variable to the navigation item with any value.
-
-eg. (Assuming the _people collection exists with a true output value)
-```yml
-- name:(eg People)
-  link:(eg /people.html)
-  drop: yes
-```
-
-Beware, dropdown menus will not automatically provide links for mobile users. This must be provided by the nav items landing page.
-
 ## Development
 
 To set up your environment to develop this theme, run `bundle install`.

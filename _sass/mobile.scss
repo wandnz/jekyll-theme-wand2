@@ -72,10 +72,6 @@
     transition: all 0.4s cubic-bezier(0.1, 0.51, 0.97, 0.99);
   }
 
-  .dropdown:hover .dropdown-content {
-    display: none;
-  }
-
   #c-content {
     @extend %main-mob;
   }

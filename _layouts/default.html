@@ -28,29 +28,12 @@
         <a id="navImg" href="{{ '/' | relative_url }}">
           <img src="{{ 'assets/images/thin-logo-small.svg' | relative_url }}" alt="WAND logo" />
         </a>
-        {% assign linkCompare = page.url | remove: '/' %}
-        {% if page.url == '/' %}
-          {% assign linkCompare = '.' %}
-        {% endif %}
-        {% for item in site.data.navigation %}
-          {% if item.drop != null %}
-        <div class="dropdown">
-          <a href="{{ item.link | relative_url }}" class="navlink droplink{% if linkCompare == item.link %} current{% endif %}">
-            <h6>{{ item.name }}</h6>
-          </a>
-          <div class="dropdown-content">
-            {% assign nameCompare = item.name | downcase %}
-            {% for topic in site[nameCompare] %}
-            <a href="{{ topic.url | relative_url }}">{{ topic.name }}</a>
-            {% endfor %}
-          </div>
-        </div>
-          {% else %}
-        <a href="{{ item.link | relative_url }}" class="navlink {% if linkCompare == item.link %}current{% endif %}">
-          <h6>{{ item.name }}</h6>
+        {% for navItem in site.data.navigation -%}
+          {%- assign navPage = site.pages | where: "name", navItem.name | first -%}
+        <a href="{{ navPage.url | relative_url }}" class="navlink{% if navPage.url == page.url %} current{% endif %}">
+          <h6>{{ navPage.title }}</h6>
         </a>
-          {% endif %}
-        {% endfor %}
+        {% endfor -%}
       </nav>
       <script>
         clean(document.getElementById("navigation"));
