@@ -26,11 +26,11 @@ layout: default
     {% for project in projectsArray %}
       {% assign project = project | strip %}
       {% assign internalProjects = site.projects | where: "name", project %}
-      {% assign externalProjects = site.data.externalProject | where: "name", project %}
+      {% assign externalProjects = site.data.external_projects | where: "name", project %}
       {% for externalProject in externalProjects %}
     <tr>
       <td>
-        <a href="{{ externalProject.link }}">{{ externalProject.name }}</a>
+        <a href="{{ externalProject.url }}">{{ externalProject.name }}</a>
       </td>
       <td>{{ externalProject.description }}</td>
     </tr>
