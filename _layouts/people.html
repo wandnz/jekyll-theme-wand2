@@ -13,7 +13,7 @@ layout: default
     {%- for person in site.people -%}
       {%- if person.role == item.name %}
       <li class="person">
-        <a href="{% if person.link %}{{ person.link }}
+        <a href="{% if person.url %}{{ person.url }}
                  {%- else %}{{ person.url | relative_url }}{% endif %}">
           <img src="{% if person.photo -%}
                     {{- person.photo | prepend: 'assets/images/people/' | relative_url -}}
