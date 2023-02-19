@@ -12,18 +12,9 @@
     </title>
     <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" />
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
-    <script type="text/javascript" src="{{ '/assets/js/theme.js' | relative_url }}"></script>
   </head>
   <body id="body">
     <div id="container">
-      <div id="banner">
-        <a href="{{ '/' | relative_url }}">
-          <img src="{{ 'assets/images/thin-logo-small.svg' | relative_url }}" alt="WAND logo" />
-        </a>
-        <button onclick="toggleMenu();" id="menu-button">
-          <img src="{{ 'assets/images/hamburger-menu.svg' | relative_url }}" alt="Menu" />
-        </button>
-      </div>
       <nav id="navbar">
         <a id="navlogo" href="{{ '/' | relative_url }}">
           <img src="{{ 'assets/images/thin-logo-small.svg' | relative_url }}" alt="WAND logo" />
@@ -42,8 +33,5 @@
         <p>{{ site.copyright }}</p>
       </footer>
     </div>
-    <script>
-      checkScrollBars();
-    </script>
   </body>
 </html>
