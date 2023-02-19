@@ -24,8 +24,8 @@
           <img src="{{ 'assets/images/hamburger-menu.svg' | relative_url }}" alt="Menu" />
         </button>
       </div>
-      <nav id="navigation">
-        <a id="navImg" href="{{ '/' | relative_url }}">
+      <nav id="navbar">
+        <a id="navlogo" href="{{ '/' | relative_url }}">
           <img src="{{ 'assets/images/thin-logo-small.svg' | relative_url }}" alt="WAND logo" />
         </a>
         {% for navItem in site.data.navigation -%}
@@ -35,9 +35,6 @@
         </a>
         {% endfor -%}
       </nav>
-      <script>
-        clean(document.getElementById("navigation"));
-      </script>
       <div id="contentContainer">
         {{ content }}
       </div>

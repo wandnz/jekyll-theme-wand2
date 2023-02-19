@@ -1,18 +1,3 @@
-function clean(node) {
-  for (var n = 0; n < node.childNodes.length; n++) {
-    var child = node.childNodes[n];
-    if (
-      child.nodeType === 8 ||
-      (child.nodeType === 3 && !/\S/.test(child.nodeValue))
-    ) {
-      node.removeChild(child);
-      n--;
-    } else if (child.nodeType === 1) {
-      clean(child);
-    }
-  }
-}
-
 function toggleMenu() {
   var extendedItems = document.getElementsByClassName("extended");
   var nav = document.getElementsByTagName("nav");
@@ -78,11 +63,11 @@ window.addEventListener("resize", function (event) {
   clearTimeout(currResize);
   currResize = setTimeout(noResize, 500);
 
-  var navNode = document.getElementById("navigation");
+  var navNode = document.getElementById("navbar");
   navNode.style.transitionDuration = "0s";
 });
 
 function noResize() {
-  var navNode = document.getElementById("navigation");
+  var navNode = document.getElementById("navbar");
   navNode.style.transitionDuration = "0.45s";
 }
