@@ -12,7 +12,7 @@ $siteFont: "Roboto", sans-serif;
 }
 
 html {
-  max-width: 110%;
+  max-width: 100%;
   overflow-x: hidden;
   height: 100%;
   padding: 0;
@@ -28,9 +28,9 @@ body {
 
 footer {
   background-color: $headerRed;
-  height: 53px;
+  height: 50px;
   display: inline-block;
-  width: 110%;
+  width: 100%;
   position: absolute;
   padding-left: 20%;
   color: white;
@@ -101,12 +101,7 @@ a {
   }
 }
 
-#container {
-  min-height: 100vh;
-  position: relative;
-}
-
-#contentContainer {
+main {
   padding: 1% 5% 6em 5%;
   font-family: $siteFont;
   text-align: center;

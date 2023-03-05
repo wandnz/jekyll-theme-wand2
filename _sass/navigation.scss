@@ -1,57 +1,118 @@
-nav {
-  display: flex;
+header {
   width: 100%;
-  align-items: center;
-  justify-content: center;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
   background-color: $navBlack;
 
-  h6 {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    color: white;
-  }
-
-  a {
-    width: 10%;
-    background-color: $navBlack;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s;
-    outline: none;
-  }
-
-  a:hover {
-    background-color: $btnRed;
-    text-decoration: none;
-  }
-
-  img {
-    display: block;
+  img.logo {
+    width: 125px;
+    height: 100%;
     float: left;
-    width: 8em;
+    padding-left: 15px;
   }
 
-  #navlogo {
-    display: inline-block;
-    position: fixed;
-    left: 0;
-    padding-left: 10px;
+  nav {
+    width: 60%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
 
-    &:hover {
-      background-color: transparent;
+    ul {
+      width: 100%;
+      height: inherit;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+
+      li {
+        height: inherit;
+        display: inline-block;
+        width: 20%;
+        height: 100%;
+        list-style: none;
+
+        a {
+          &,
+          &:visited {
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            outline: none;
+            height: 100%;
+            width: 100%;
+            display: inline-block;
+          }
+
+          &:hover {
+            background-color: $btnRed;
+            text-decoration: none;
+          }
+        }
+
+        a.current {
+          background-color: $btnRed;
+
+          &:hover {
+            background-color: $navBlack;
+          }
+        }
+      }
     }
-  }
 
-  .current {
-    background-color: $btnRed;
-
-    &:hover {
-      background-color: $navBlack;
+    #menu-button {
+      display: none;
+    }
+    .menu-icon {
+      display: none;
     }
   }
 }
 
-#menu-button {
-  display: none;
+@media screen and (max-width: 768px) {
+  header {
+    nav {
+      width: 100%;
+      height: auto;
+      float: left;
+
+      ul {
+        display: block;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s;
+        li {
+          width: 100%;
+          height: 50px;
+          background-color: $navBlack;
+          a {
+            text-align: left;
+            padding-left: 10px;
+          }
+        }
+      }
+
+      .menu-icon {
+        width: 50px;
+        height: inherit;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      #menu-button:checked ~ ul {
+        max-height: 350px;
+      }
+      .menu-icon img {
+        width: 25px;
+        height: 25px;
+        padding-right: 15px;
+        vertical-align: middle;
+      }
+    }
+  }
 }

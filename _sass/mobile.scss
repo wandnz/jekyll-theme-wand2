@@ -3,6 +3,10 @@
     width: 100%;
   }
 
+  main {
+    padding-top: 4em;
+  }
+
   #c-content {
     @extend %main-mob;
   }
@@ -18,10 +22,6 @@
       margin-left: -25%;
       padding-left: 45%;
     }
-  }
-
-  #contentContainer {
-    padding-top: 4em;
   }
 
   #project {
