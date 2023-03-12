@@ -2,8 +2,9 @@
 layout: default
 ---
 
-<div id="researchInput">{{ content }}</div>
-
+<div id="researchContent">
+  {{ content }}
+</div>
 <div id="research">
   <ul>
     {% for topic in site.research %} {% assign indexOdd = forloop.index0 | modulo: 2 %}

@@ -1,7 +1,7 @@
 #people {
   @extend %main-div;
 
-  &Input {
+  &Content {
     @extend %main-div;
     display: inline-block;
     text-align: left;
