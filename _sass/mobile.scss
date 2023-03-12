@@ -7,10 +7,6 @@
     padding-top: 4em;
   }
 
-  #c-content {
-    @extend %main-mob;
-  }
-
   #people {
     @extend %main-mob;
 
@@ -88,22 +84,22 @@
     font-size: 0.9em;
   }
 
-  #section {
-    .sectDiv {
+  #sections {
+    .section {
       width: 90%;
       margin-left: -5%;
       padding-left: 10%;
       padding-right: 20%;
       padding-top: 4em;
       padding-bottom: 4em;
+
+      &:first-child {
+        padding-top: 0;
+      }
     }
 
-    .oddSect {
+    .even {
       background-color: $backGrey;
-    }
-
-    .firstSect {
-      padding-top: 0;
     }
   }
 }

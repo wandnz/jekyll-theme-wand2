@@ -126,10 +126,6 @@ img[src~="content-full-span"] {
   width: 100%;
 }
 
-#c-content {
-  @extend %main-div;
-}
-
 pre {
   white-space: pre-wrap; /* Since CSS 2.1 */
   white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
