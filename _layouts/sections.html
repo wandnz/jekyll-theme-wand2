@@ -6,7 +6,9 @@ layout: default
   {%- assign sections = content | split: '<!--split-->' -%}
   {% for section in sections -%}
   <div class="section {% cycle 'odd', 'even' %}">
-    {{ section }}
+    <div class="content">
+      {{ section }}
+    </div>
   </div>
   {% endfor %}
 </div>

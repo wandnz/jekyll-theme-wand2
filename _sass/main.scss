@@ -7,7 +7,7 @@ $navBlack: #2b2b2b;
 $siteFont: "Roboto", sans-serif;
 
 %main-div {
-  width: 80%;
+  width: 45%;
   margin: auto;
 }
 
@@ -74,8 +74,6 @@ a {
 main {
   text-align: center;
   margin-top: 2em;
-  margin-left: 4em;
-  margin-right: 4em;
   margin-bottom: 2em;
   min-height: calc(100vh - 10em);
 
@@ -150,5 +148,38 @@ footer {
     a {
       color: white;
     }
+  }
+}
+
+.content {
+  @extend %main-div;
+  display: inline-block;
+  text-align: left;
+
+  &h4 {
+    color: $headerRed;
+  }
+
+  &strong {
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+}
+
+#sections {
+  text-align: center;
+
+  .section {
+    width: 100%;
+    padding-top: 4em;
+    padding-bottom: 4em;
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  .even {
+    background-color: $backGrey;
   }
 }
