@@ -15,14 +15,16 @@ layout: default
       <td></td>
     </tr>
     {% for internalProject in site.projects %}
-      {% if page.name == internalProject.topic %}
+      {%- if page.name == internalProject.topic -%}
     <tr>
       <td>
         <a href="{{ internalProject.url | relative_url }}">{{ internalProject.name }}</a>
       </td>
-      <td>{{ internalProject.description | markdownify }}</td>
+      <td>
+        {{ internalProject.description | markdownify -}}
+      </td>
     </tr>
-      {% endif %}
+      {%- endif %}
     {% endfor %}
     {% for externalProject in site.data.externalProject %}
       {% if page.name == externalProject.topic %}
@@ -30,9 +32,11 @@ layout: default
       <td>
         <a href="{{ externalProject.url }}">{{ externalProject.name }}</a>
       </td>
-      <td>{{ externalProject.description | markdownify }}</td>
+      <td>
+        {{ externalProject.description | markdownify -}}
+      </td>
     </tr>
-      {% endif %}
+      {%- endif %}
     {% endfor %}
   </table>
 </div>
