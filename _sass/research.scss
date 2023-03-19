@@ -1,5 +1,6 @@
 #research {
   @extend %main-div;
+  width: 80%;
   text-align: initial;
 
   &Content {
@@ -40,7 +41,7 @@
     }
   }
 
-  .oddResearch {
+  .even {
     background-color: $backGrey;
   }
 }

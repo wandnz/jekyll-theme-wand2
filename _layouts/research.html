@@ -2,16 +2,16 @@
 layout: default
 ---
 
-<div id="researchContent">
+<div class="content">
   {{ content }}
 </div>
 <div id="research">
   <ul>
-    {% for topic in site.research %} {% assign indexOdd = forloop.index0 | modulo: 2 %}
-    <li {% if indexOdd == 1 %} class="oddResearch"{% endif %}>
+    {%- for topic in site.research %}
+    <li class="{% cycle 'odd', 'even' %}">
       {{ topic.content }}
       <a href="{{ topic.url | relative_url }}" class="boxLink">{{ topic.name }}</a>
     </li>
-    {% endfor %}
+    {% endfor -%}
   </ul>
 </div>
