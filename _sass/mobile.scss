@@ -3,14 +3,8 @@
     width: 80%;
   }
 
-  main {
-    padding-top: 4em;
-  }
-
   .content {
     @extend %main-mob;
-    padding-left: 15px;
-    padding-right: 15px;
   }
 
   #people {
