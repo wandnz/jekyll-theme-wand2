@@ -7,6 +7,10 @@
     @extend %main-mob;
   }
 
+  main {
+    min-height: calc(100vh - 13em);
+  }
+
   #people {
     @extend %main-mob;
 
